@@ -1,7 +1,7 @@
-#include "ScriptMgr.h"
+#include "Chat.h"
 #include "Player.h"
 #include "ScriptedGossip.h"
-#include "Chat.h"
+#include "ScriptMgr.h"
 #include "SpellMgr.h"
 
 class CreatureScript_Professions : public CreatureScript
