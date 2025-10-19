@@ -7,6 +7,20 @@
 
 bool ModConfigEnable = 1;
 uint16 ModConfigGivenCraftLevel = 450;
+bool ModConfigEnableAlchemy = 1;
+bool ModConfigEnableBlacksmithing = 1;
+bool ModConfigEnableLeatherworking = 1;
+bool ModConfigEnableTailoring = 1;
+bool ModConfigEnableEngineering = 1;
+bool ModConfigEnableEnchanting = 1;
+bool ModConfigEnableJewelcrafting = 1;
+bool ModConfigEnableInscription = 1;
+bool ModConfigEnableHerbalism = 1;
+bool ModConfigEnableSkinning = 1;
+bool ModConfigEnableMining = 1;
+bool ModConfigEnableCooking = 1;
+bool ModConfigEnableFirstAid = 1;
+bool ModConfigEnableFishing = 1;
 
 class NpcFreeProfessionsConfig : public WorldScript
 {
@@ -22,6 +36,20 @@ public:
     {
         ModConfigEnable = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable", 1);
         ModConfigGivenCraftLevel = sConfigMgr->GetOption<uint16>("NpcFreeProfessions.GivenCraftLevel", 450);
+        ModConfigEnableAlchemy = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Alchemy", 1);
+        ModConfigEnableBlacksmithing = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Blacksmithing", 1);
+        ModConfigEnableLeatherworking = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Leatherworking", 1);
+        ModConfigEnableTailoring = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Tailoring", 1);
+        ModConfigEnableEngineering = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Engineering", 1);
+        ModConfigEnableEnchanting = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Enchanting", 1);
+        ModConfigEnableJewelcrafting = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Jewelcrafting", 1);
+        ModConfigEnableInscription = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Inscription", 1);
+        ModConfigEnableHerbalism = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Herbalism", 1);
+        ModConfigEnableSkinning = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Skinning", 1);
+        ModConfigEnableMining = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Mining", 1);
+        ModConfigEnableCooking = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Cooking", 1);
+        ModConfigEnableFirstAid = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.FirstAid", 1);
+        ModConfigEnableFishing = sConfigMgr->GetOption<bool>("NpcFreeProfessions.Enable.Fishing", 1);
     }
 };
 
@@ -34,21 +62,48 @@ public:
     {
         if (ModConfigEnable)
         {
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Alchemy", GOSSIP_SENDER_MAIN, SKILL_ALCHEMY);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Blacksmithing", GOSSIP_SENDER_MAIN, SKILL_BLACKSMITHING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Leatherworking", GOSSIP_SENDER_MAIN, SKILL_LEATHERWORKING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Tailoring", GOSSIP_SENDER_MAIN, SKILL_TAILORING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Engineering", GOSSIP_SENDER_MAIN, SKILL_ENGINEERING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Enchanting", GOSSIP_SENDER_MAIN, SKILL_ENCHANTING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Jewelcrafting", GOSSIP_SENDER_MAIN, SKILL_JEWELCRAFTING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Inscription", GOSSIP_SENDER_MAIN, SKILL_INSCRIPTION);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Herbalism", GOSSIP_SENDER_MAIN, SKILL_HERBALISM);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Skinning", GOSSIP_SENDER_MAIN, SKILL_SKINNING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Mining", GOSSIP_SENDER_MAIN, SKILL_MINING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Cooking", GOSSIP_SENDER_MAIN, SKILL_COOKING);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "First Aid", GOSSIP_SENDER_MAIN, SKILL_FIRST_AID);
-            AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Fishing", GOSSIP_SENDER_MAIN, SKILL_FISHING);
-
+            if (ModConfigEnableAlchemy){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Alchemy", GOSSIP_SENDER_MAIN, SKILL_ALCHEMY);
+            }
+            if (ModConfigEnableBlacksmithing){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Blacksmithing", GOSSIP_SENDER_MAIN, SKILL_BLACKSMITHING);
+            }
+            if (ModConfigEnableLeatherworking){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Leatherworking", GOSSIP_SENDER_MAIN, SKILL_LEATHERWORKING);
+            }
+            if (ModConfigEnableTailoring){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Tailoring", GOSSIP_SENDER_MAIN, SKILL_TAILORING);
+            }
+            if (ModConfigEnableEngineering){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Engineering", GOSSIP_SENDER_MAIN, SKILL_ENGINEERING);
+            }
+            if (ModConfigEnableEnchanting){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Enchanting", GOSSIP_SENDER_MAIN, SKILL_ENCHANTING);
+            }
+            if (ModConfigEnableJewelcrafting){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Jewelcrafting", GOSSIP_SENDER_MAIN, SKILL_JEWELCRAFTING);
+            }
+            if (ModConfigEnableInscription){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Inscription", GOSSIP_SENDER_MAIN, SKILL_INSCRIPTION);
+            }
+            if (ModConfigEnableHerbalism){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Herbalism", GOSSIP_SENDER_MAIN, SKILL_HERBALISM);
+            }
+            if (ModConfigEnableSkinning){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Skinning", GOSSIP_SENDER_MAIN, SKILL_SKINNING);
+            }
+            if (ModConfigEnableMining){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Mining", GOSSIP_SENDER_MAIN, SKILL_MINING);
+            }
+            if (ModConfigEnableCooking){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Cooking", GOSSIP_SENDER_MAIN, SKILL_COOKING);
+            }
+            if (ModConfigEnableFirstAid){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "First Aid", GOSSIP_SENDER_MAIN, SKILL_FIRST_AID);
+            }
+            if (ModConfigEnableFishing){
+                AddGossipItemFor(player, GOSSIP_ICON_TRAINER, "Fishing", GOSSIP_SENDER_MAIN, SKILL_FISHING);
+            }
             SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature);
         }
 
@@ -150,13 +205,28 @@ public:
                     player->learnSpell(51309);
                     break;
                 case SKILL_COOKING:
+                    player->learnSpell(2550);
+                    player->learnSpell(3102);
+                    player->learnSpell(3413);
+                    player->learnSpell(18260);
+                    player->learnSpell(33359);
                     player->learnSpell(51296);
                     break;
                 case SKILL_FIRST_AID:
+                    player->learnSpell(3273);
+                    player->learnSpell(3274);
+                    player->learnSpell(7924);
+                    player->learnSpell(10846);
+                    player->learnSpell(27028);
                     player->learnSpell(45542);
                     break;
                 case SKILL_FISHING:
-                    player->learnSpell(65293);
+                    player->learnSpell(7620);
+                    player->learnSpell(7731);
+                    player->learnSpell(7732);
+                    player->learnSpell(18248);
+                    player->learnSpell(33095);
+                    player->learnSpell(64484);
                     break;
                 case SKILL_MINING:
                     player->learnSpell(2575);
